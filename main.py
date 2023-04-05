@@ -7,7 +7,7 @@ def read_pdf(pdf):
     speaker = pyttsx3.init()
 
     for page_num in range(pdf_reader.numPages):
-        text = pdf_reader.getPage.extractText()
+        text = pdf_reader.getPage(page_num).extractText()
         clean_text = text.strip().replace('\n', ' ')
         print(clean_text)
 
@@ -17,4 +17,4 @@ def read_pdf(pdf):
     speaker.stop
 
 
-read_pdf('')
+read_pdf('file.pdf')
