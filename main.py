@@ -3,11 +3,11 @@ import PyPDF2  # Library - used to perform major tasks on PDF files
 
 
 def read_pdf(pdf):
-    pdf_reader = PyPDF2.PdfFileReader(open(pdf, 'rb'))
+    pdf_reader = PyPDF2.PdfReader(open(pdf, 'rb'))
     speaker = pyttsx3.init()
 
-    for page_num in range(pdf_reader.numPages):
-        text = pdf_reader.getPage(page_num).extractText()
+    for page_num in range(len(pdf_reader.pages)):
+        text = pdf_reader.pages[page_num].extract_text()
         clean_text = text.strip().replace('\n', ' ')
         print(clean_text)
 
@@ -17,4 +17,4 @@ def read_pdf(pdf):
     speaker.stop
 
 
-read_pdf('file.pdf')
+read_pdf('cover_letter.pdf')
