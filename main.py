@@ -11,7 +11,6 @@ def read_pdf(pdf):
     # speaker.setProperty('voice', voices[1].id)
 
     # Changing the rate
-    rate = speaker.getProperty('rate')
     speaker.setProperty('rate', 175)
 
     text = ''
