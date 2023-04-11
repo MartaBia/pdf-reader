@@ -1,8 +1,8 @@
-# PDF Reader
+# PDF Reader 📖
 
 This little program takes a pdf file that is passed from the user through the command line and reads it outloud.
 
-## Run the program
+## Run the program 🏃🏻‍♀️
 
 Before running this program make sure you have Python3 installed on your machine by typing in your terminal:
 
@@ -14,7 +14,7 @@ I suggest to [create a virtual environment](https://docs.python.org/3/library/ve
 
 `pip install -r requirements.txt`
 
-If you work on a Mac you might need to modify the nsss.py file to avoid a bug by following these steps: 
+⚠️ If you work on a Mac you might need to modify the nsss.py file to avoid a bug by following these steps: 
 - Find where you have installed the pyttsx3 package (either on your virtual environment or globally on your machine)
 - Open the file `pyttsx3/drivers/nsss.py`
 - Edit as [suggested here](https://stackoverflow.com/a/74727956) 
