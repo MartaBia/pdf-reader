@@ -6,27 +6,27 @@ def read_pdf(pdf):
     pdf_reader = PyPDF2.PdfReader(open(pdf, 'rb'))
     speaker = pyttsx3.init()
 
-    # Selecting female voice
-    voices = speaker.getProperty('voices')
-    speaker.setProperty('voice', voices[1].id)
+    # Selecting different voices
+    # voices = speaker.getProperty('voices')
+    # speaker.setProperty('voice', voices[1].id)
+
+    # Changing the rate
+    rate = speaker.getProperty('rate')
+    speaker.setProperty('rate', 175)
 
     text = ''
     for page_num in range(len(pdf_reader.pages)):
         page_text = pdf_reader.pages[page_num].extract_text()
 
-        # Clean up te text
-        page_text = page_text.strip().replace('\n', ' ')
-
         text += page_text
 
-    print(text)
-    # Save the audio file
-    speaker.save_to_file(text, 'test.mp3')
+    # Clean up te text
+    clean_text = text.strip().replace('\n', ' ')
 
-    # speaker.say(clean_text)
+    speaker.say(clean_text)
     speaker.runAndWait()
-
     speaker.stop
 
 
-read_pdf('cover_letter.pdf')
+pdf = input('Please, insert the pdf title and press enter:\n')
+read_pdf(pdf)
